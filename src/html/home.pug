@@ -1,0 +1,39 @@
+---
+index: true
+---
+.first
+	.up
+		//- h1(x-data="{ message: 'I ❤️ Alpine' }" x-text="message")
+		//- h1(x-data='{}' x-text="$store.lang")
+		img.mundo(src='/img/el-mundo.png')
+
+		.menu(x-data='')
+			template(x-for='(item, index) in $store.menu')
+				a(:href='index' x-html='item[$store.lang]')
+
+			//- Biografía
+
+			//- Primeros trabajos: 
+			//- de Etten a Amberes. 1881-1886
+
+			//- París. 1886-1888
+
+			//- La vida en el sur: 
+			//- Arlés. 1888-1889
+
+			//- Ingreso en Saint Rémy 
+			//- de Provence. 1889-1890
+
+			//- Últimos trabajos 
+			//- en Auvers-Sur-Oise. 1890
+
+	.right
+		img.right(src='/img/home.jpg')
+
+	.down
+		img(src='/img/nomad.svg')
+		.flags(x-data="{ langs: ['ca', 'es', 'en'] }")
+			template(x-for='lang in langs')
+				a(@click.prevent='$store.setLang(lang)')
+					img(x-bind:src='"/img/flag/" + lang + ".png"')
+

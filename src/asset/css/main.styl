@@ -1,0 +1,57 @@
+.first
+	display grid
+	grid-template "a b" 5fr "c b" 1fr / 40vw 60vw
+	// min-width 100vw
+	max-height 100vh
+
+	.right
+		grid-area 1 / 2 / span 2 / span 1
+
+	.up
+		color White
+		background Black
+		padding-top 65px
+		.menu
+			font 900 26px Roboto
+			white-space pre
+			margin 47px 90px 0 90px
+			a
+				display block
+				margin-bottom 2ex
+		img
+			width auto
+			padding-left 74px
+			padding-right 57px
+
+	.down
+		// flex-grow 1
+		display flex
+		align-self center
+		padding-left 90px
+		padding-right 35px
+		background White
+		justify-content space-between
+		.flags
+			align-self end
+			img
+				margin-left 17px
+
+	// // min-height 100vh
+	// .left
+	// 	width 40%
+	// 	display flex
+	// 	flex-direction column
+	// 	> div
+	// 		padding-left 90px
+	// 	.up
+	// 		// flex-grow 100
+	// 		background Black
+	// 		color White
+// img.home
+// 	width 49px
+// 	height 49px
+
+img.right
+	height 100%
+	object-fit cover
+	width 100%
