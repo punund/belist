@@ -1,0 +1,21 @@
+---
+index: false
+---
+.first
+	.up
+		img.mundo(src='/img/el-mundo.png')
+		.menu(x-data='')
+			| Картинка справа приезжает из облака ☁️
+			//- template(x-for='(item, index) in $store.menu')
+			//- 	a(:href='index' x-html='item[$store.lang]')
+
+	.right
+		img.right(src='//res.cloudinary.com/dy24xefw1/image/upload/v1637749581/home_xkwpyl.jpg')
+
+	.down
+		img(src='/img/nomad.svg')
+		.flags(x-data="{ langs: ['ca', 'es', 'en'] }")
+			template(x-for='lang in langs')
+				a(@click.prevent='$store.setLang(lang)')
+					img(x-bind:src='"/img/flag/" + lang + ".png"')
+
